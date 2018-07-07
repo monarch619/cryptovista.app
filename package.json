@@ -1,0 +1,26 @@
+{
+  "name": "cryptovista.app",
+  "version": "1.0.0",
+  "description": "Cryptovista.app landing page",
+  "main": "index.js",
+  "scripts": {
+    "create-dist": "node ./build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AoDev/cryptovista.app.git"
+  },
+  "keywords": [
+    "cryptovista"
+  ],
+  "author": "Kevin Purnelle <kevin.purnelle@gmail.com> (http://kevinpurnelle.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AoDev/cryptovista.app/issues"
+  },
+  "homepage": "https://github.com/AoDev/cryptovista.app#readme",
+  "devDependencies": {
+    "ncp": "2.0.0"
+  }
+}
