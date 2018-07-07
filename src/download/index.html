@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cryptovista.app download</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <header>
+    Header
+  </header>
+  <main>
+    <section>
+      Cryptovista downloads
+    </section>
+  </main>
+  <footer>
+    cryptovista.app - 2018
+  </footer>
+
+  <script>
+    const macVersionURL = 'https://s3.eu-central-1.amazonaws.com/cryptovista-electron/latest-mac.json'
+    function reqListener() {
+      console.log(this.responseText)
+    }
+
+    var oReq = new XMLHttpRequest()
+    oReq.responseType = 'json'
+    oReq.addEventListener('load', reqListener)
+    oReq.open('GET', macVersionURL)
+    oReq.send()
+  </script>
+</body>
+
+</html>
