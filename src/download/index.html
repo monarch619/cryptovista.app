@@ -2,33 +2,112 @@
 <html>
 
 <head>
-  <title>Cryptovista.app download</title>
+  <title>Cryptovista.app - download for OSX and Windows</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="/cryptovista.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-  <header>
-    Header
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="link-invisible flex" href="/">
+          <img class="space-right-1" src="/images/cryptovista-logo.svg" width="44" height="44" />
+          <h1 class="app-title unselectable space-right-2">
+            Cryptovista
+            <span class="app-title-suffix">app</span>
+          </h1>
+        </a>
+      </div>
+    </div>
   </header>
   <main>
-    <section>
-      Cryptovista downloads
+    <section class="app-overview height-100vh">
+      <div class="container">
+        <div class="padded-2">
+          <h2>Download the latest version</h2>
+          <h3>Cryptovista for Windows</h3>
+          <div id="download-list-win">
+          </div>
+
+          <h3>Cryptovista for OSX</h3>
+          <div id="download-list-mac">
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-  <footer>
-    cryptovista.app - 2018
+  <footer class="main-footer txt-italic">
+    <div class="main-footer-content">
+      <span class="space-right-1ch">Cryptovista.app © 2018</span>
+    </div>
   </footer>
 
   <script>
-    const macVersionURL = 'https://s3.eu-central-1.amazonaws.com/cryptovista-electron/latest-mac.json'
-    function reqListener() {
-      console.log(this.responseText)
+    var dom = {
+      add: function add(parent, child) {
+        parent.appendChild(child)
+      },
+      el: function el(tag) {
+        return document.createElement(tag)
+      },
+      getById: function get(id) {
+        return window.document.getElementById(id)
+      },
+      addClass: function addClass(element, className) {
+        element.className = element.className + ' ' + className
+      }
     }
 
+    var macVersionURL = 'https://s3.eu-central-1.amazonaws.com/cryptovista-electron/latest-mac.json'
+    var osxContainerId = 'download-list-mac'
+
+    function addLastVersion (xmlReq) {
+      var versionDetails = JSON.parse(xmlReq.responseText)
+      var container = dom.getById(osxContainerId)
+      var content = dom.el('div')
+      // Date
+      var date = dom.el('div')
+      date.innerText = new Date(versionDetails.releaseDate).toLocaleDateString()
+      // link
+      var link = dom.el('a')
+      link.href = versionDetails.url.replace('-mac.zip', '.dmg')
+      link.innerText = 'cryptovista.app v' + versionDetails.version
+      dom.addClass(link, 'link link-discreet')
+      dom.add(content, date)
+      dom.add(content, link)
+      dom.add(container, content)
+    }
+
+
     var oReq = new XMLHttpRequest()
-    oReq.responseType = 'json'
-    oReq.addEventListener('load', reqListener)
+    oReq.overrideMimeType('application/json')
+    oReq.addEventListener('load', function () {
+      if (oReq.status === 200) {
+        addLastVersion(oReq)
+      }
+      else {
+        // handle error
+      }
+    })
     oReq.open('GET', macVersionURL)
     oReq.send()
   </script>

@@ -2,23 +2,221 @@
 <html>
 
 <head>
-  <title>Cryptovista.app</title>
+  <title>Cryptovista.app - Crypto portfolios</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="/cryptovista.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-  <header>
-    Header
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <img class="space-right-1" src="/images/cryptovista-logo.svg" width="44" height="44"/>
+        <h1 class="app-title unselectable space-right-2">
+          Cryptovista
+          <span class="app-title-suffix">app</span>
+        </h1>
+        <a class="link-cta flex-row-end" href="/download">
+          Get the app ! <span class="float-right">❯</>
+        </a>
+      </div>
+    </div>
   </header>
   <main>
-    <section>
-      Cryptovista
+    <div class="app-overview">
+      <div class="container padded-2">
+        <h2 class="overview-title space-bottom-3">Your crypto companion </h2>
+        <ul class="overview-features">
+          <li>
+            <img class="overview-icon" src="/images/cryptovista-portfolio.svg" height="96" width="96" />
+            <p>Monitor crypto portfolios</p>
+          </li>
+          <li>
+            <img class="overview-icon" src="/images/crypto-news-icon.svg" height="96" width="96" />
+            <p>Get news from the crypto world</p>
+          </li>
+          <li>
+            <img class="overview-icon" src="/images/market-icon.svg" height="96" width="96" />
+            <p>Check the crypto market</p>
+          </li>
+        </ul>
+        <p class="txt-center">All in one place</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <section class="padded-2">
+        <h3 class="section-title txt-center space-bottom-3">The Cryptovista touch</h3>
+        <ul class="list-unstyled txt-gray row">
+          <li class="col-m-3 txt-center space-bottom-2">
+            <div><b>No account needed</b></div>
+            <p>Just <a class="link-discreet" href="/download">download the app</a> and start checking your cryptos.</p>
+          </li>
+          <li class="col-m-3 txt-center space-bottom-2">
+            <div><b>Works Offline</b></div>
+            <p>Data is stored and encrypted locally for later viewing.</p>
+          </li>
+          <li class="col-m-3 txt-center space-bottom-2">
+            <div><b>Your privacy in mind</b></div>
+            <p>No middleman or analytics spying on you.</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="bg-white">
+      <div class="container padded-2 clearfix">
+
+        <div class="my-cryptos-content">
+          <h3 class="section-title">View all your cryptos in one place</h3>
+
+          <p>From exchanges</p>
+
+          <ul>
+            <li><em>Binance</em></li>
+            <li><em>Okex</em></li>
+            <li><em>Cryptopia</em></li>
+            <li><em>Coinbase</em></li>
+            <li><em>Kraken</em></li>
+          </ul>
+
+          <p>or directly from an <em>Ethereum</em> wallet.</p>
+
+          <p>More exchanges or wallets support will be added over time.</p>
+        </div>
+        <div class="my-cryptos-img-wrapper with-shadow">
+          <img class="screenshot slideshow" src="/images/screen-add-source-1.png" height="450" width="665" />
+        </div>
+      </div>
+
+      <div class="big-arrow">
+        ❯
+      </div>
+
+      <div class="container padded-2 clearfix">
+        <div class="clearfix">
+          <div class="clearfix col-portfolio">
+            <div class="img-wrapper-portfolio flex-center">
+              <h3 class="section-title-gray">Get a clear overview</h3>
+            </div>
+          </div>
+          <div class="clearfix txt-center col-portfolio">
+            <div class="img-wrapper-portfolio with-shadow">
+              <img class="img-wrapper-portfolio-img" src="/images/cryptovista-portfolio-totalbalance-1.png" height="281" width="462" />
+            </div>
+            <b class="txt-gray">Total balance</b>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="clearfix txt-center col-portfolio">
+            <div class="img-wrapper-portfolio with-shadow">
+              <img class="img-wrapper-portfolio-img" src="/images/cryptovista-value-wallets-1.png" height="281" width="462" />
+            </div>
+            <b class="txt-gray">Balance per wallet</b>
+          </div>
+          <div class="clearfix txt-center col-portfolio">
+            <div class="img-wrapper-portfolio with-shadow">
+              <img class="img-wrapper-portfolio-img" src="/images/cryptovista-value-tokens-1.png" height="281" width="462" />
+            </div>
+            <b class="txt-gray">Balance per token</b>
+          </div>
+        </div>
+      </div>
     </section>
+
+
+    <section>
+      <div class="container padded-2 clearfix">
+        <div class="news-content">
+          <h3 class="section-title">Crypto News</h3>
+          <p>Latest crypto news headlines from your favourite sites in a single place.</p>
+          <p>Among them:</p>
+          <ul>
+            <li><em>Coindesk</em></li>
+            <li><em>Cointelegraph</em></li>
+          </ul>
+        </div>
+        <div class="news-img-wrapper with-shadow">
+          <img class="screenshot slideshow3" src="/images/screen-news-1.png" height="450" width="665" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="container padded-2 clearfix">
+        <div class="market-content">
+          <h3 class="section-title">Check the market prices</h3>
+          <p>
+            Find cryptos and their price.
+          </p>
+        </div>
+        <div class="market-img-wrapper with-shadow">
+          <img class="screenshot slideshow2" src="/images/screen-market-1.png" height="450" width="665" />
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <section class="padded-2">
+        <h3 class="section-title">More features</h3>
+        <ul class="list-space-1">
+          <li><b>Display prices in different fiat currencies</b>.</li>
+          <li><b>Mask balances</b> and amounts of token in case you want to show the app.</li>
+          <li><b>Multiple portfolios</b>: group any crypto sources of interest under different profiles.</li>
+          <li><b>Ethereum extras</b>: display your last transactions and all your ERC-20 tokens.</li>
+          <li><b>Spreadsheet</b>: add any token with any amount manually.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="section-poweredby padded-2">
+      <div class="main-footer-content">
+        <span class="space-right-1ch">Powered by </span>
+        <a href="https://coinmarketcap.com/" class="link-discreet">
+          CoinMarketCap
+        </a>
+        <span class="space-right-1ch space-left-1ch">-</span>
+        <a href="https://github.com/ccxt/ccxt" class="link-discreet">
+          ccxt
+        </a>
+        <span class="space-right-1ch space-left-1ch">-</span>
+        <a href="https://ethplorer.io/" class="link-discreet">
+          ethplorer.io
+        </a>
+        <span class="space-right-1ch space-left-1ch">-</span>
+        <a href="https://www.cryptocompare.com/" class="link-discreet">
+          CryptoCompare
+        </a>
+      </div>
+    </section>
+
   </main>
-  <footer>
-    cryptovista.app - 2018
+
+  <footer class="main-footer txt-italic">
+    <div class="main-footer-content">
+      <span class="space-right-1ch">Cryptovista.app © 2018</span>
+    </div>
   </footer>
+
 </body>
 
 </html>
