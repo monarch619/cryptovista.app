@@ -1,0 +1,34 @@
+.app-overview {
+  background: linear-gradient(135deg, #00a8eb 0%,#1ca692 100%);
+  color: #fff;
+}
+
+.overview-title {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.overview-features {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 32em) {
+  .overview-features {
+    display: flex;
+    justify-content: space-between;
+
+    > li {
+      width: 33.3333%;
+    }
+  }
+}

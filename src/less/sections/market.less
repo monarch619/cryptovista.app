@@ -1,0 +1,29 @@
+// MARKET
+.market-img-wrapper {
+  height: 22em;
+  width: 22em;
+  max-width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.market-img-wrapper.screenshot {
+  position: absolute;
+  top: -25px;
+  left: -28px;
+}
+
+@media screen and (min-width: 32em) {
+  .market-img-wrapper {
+    width: 50%;
+    float: left;
+  }
+
+  .market-content {
+    width: 50%;
+    float: left;
+    padding-right: 48px;
+    padding-top: 48px;
+  }
+}

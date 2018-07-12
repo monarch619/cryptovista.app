@@ -1,0 +1,74 @@
+/**
+@color-green: #0a0;
+@color-teal: #009daa;
+@color-blue-vivid: #00b7ff;
+@color-green-vivid: #16dd00;
+@color-green-aim: #1ca648;
+@color-red-vivid: #ff020a;
+@color-red-aim: #d00;
+@gray-dark: #7e8995;
+@gray-mid: #aab1b9;
+@gray-light: #d4d8dc;
+@gray-lighter: #d8dddf;
+@gray-lightest: #f5f5f5;
+**/
+
+@import "variables.less";
+@import "reset.less";
+@import "links.less";
+@import "typography.less";
+@import "layout.less";
+@import "animations.less";
+
+// SECTIONS
+@import "sections/header.less";
+@import "sections/overview.less";
+@import "sections/poweredby.less";
+@import "sections/mycryptos.less";
+@import "sections/news.less";
+@import "sections/market.less";
+@import "sections/footer.less";
+
+/*UTILITIES*/
+.panel {
+  position: relative;
+  border: 1px solid #e3e7e8;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.list-space-1 > li {
+  margin-bottom: 8px;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.with-shadow {
+  box-shadow: 0 0 8px 0px rgba(0,0,0,0.2);
+}
+
+/*CONTENT*/
+.body {
+  padding: 64px 0 32px 0;
+}
+
+
+.section-title {
+  color: @color-blue-aim;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title-gray {
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+

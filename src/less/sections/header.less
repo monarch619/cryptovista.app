@@ -1,0 +1,59 @@
+.header {
+  background: #fff;
+  color: #fff;
+  position: fixed;
+  height: 78px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 16px 32px;
+}
+
+.download-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.download-text {
+  display: none;
+}
+
+@media screen and (min-width: 32em) {
+  .link-cta {
+    width: 14em;
+  }
+
+  .download-text {
+    display: inline;
+  }
+
+  .download-icon {
+    margin-right: 16px;
+  }
+}
+
+.app-title {
+  letter-spacing: 0.1em;
+  font-size: 1.1em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #000;
+  position: relative;
+  top: -2px;
+}
+
+.app-title-suffix {
+  font-size: 0.5em;
+  position: absolute;
+  right: 1px;
+  bottom: -1em;
+  color: #999;
+}

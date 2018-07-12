@@ -1,0 +1,43 @@
+/*LINKS*/
+a,
+.link {
+  color: #0092cc;
+
+  &:hover {
+    color: #00aff4;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 2px #00b7ff;
+    border: 1px solid #00b7ff;
+  }
+}
+
+.link-discreet {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link-invisible {
+  text-decoration: none;
+}
+
+.link-cta:visited,
+.link-cta {
+  height: 48px;
+  padding: 16px 32px;
+  background-color: @color-blue-aim;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease-out;
+  
+  &:hover {
+    background-color: #19a9ab;
+  }
+}
