@@ -39,17 +39,35 @@
     </div>
   </header>
   <main>
-    <section class="app-overview height-100vh">
+    <section class="height-100vh with-gradient">
       <div class="container">
         <div class="padded-2">
-          <h2>Download the latest version</h2>
-          <h3>Cryptovista for Windows</h3>
-          <div id="download-list-win">
+          <div>
+            <div class="space-bottom-2">
+              <div class="panel padded-2">
+                <h3 class="h3">
+                  <img class="align-bottom space-right-1" src="/images/windows-logo.svg" alt="Microsoft Windows Logo" width="32" height="32"/>Cryptovista for Windows
+                </h3>
+                <div id="download-list-win">
+                  <p>Download latest release <span id="win-release-date"></span></p>
+                  <p><a id="windows-download-link"></a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-bottom-2">
+              <div class="panel padded-2">
+                <h3 class="h3">
+                  <img class="align-bottom space-right-1" src="/images/apple-logo.svg" alt="Apple Logo" width="32" height="32"/>Cryptovista for Mac
+                </h3>
+                <div id="download-list-mac">
+                  <p>Download latest release <span id="mac-release-date"></span></p>
+                  <p><a id="mac-download-link"></a></p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <h3>Cryptovista for OSX</h3>
-          <div id="download-list-mac">
-          </div>
         </div>
       </div>
     </section>
@@ -60,56 +78,7 @@
     </div>
   </footer>
 
-  <script>
-    var dom = {
-      add: function add(parent, child) {
-        parent.appendChild(child)
-      },
-      el: function el(tag) {
-        return document.createElement(tag)
-      },
-      getById: function get(id) {
-        return window.document.getElementById(id)
-      },
-      addClass: function addClass(element, className) {
-        element.className = element.className + ' ' + className
-      }
-    }
-
-    var macVersionURL = 'https://s3.eu-central-1.amazonaws.com/cryptovista-electron/latest-mac.json'
-    var osxContainerId = 'download-list-mac'
-
-    function addLastVersion (xmlReq) {
-      var versionDetails = JSON.parse(xmlReq.responseText)
-      var container = dom.getById(osxContainerId)
-      var content = dom.el('div')
-      // Date
-      var date = dom.el('div')
-      date.innerText = new Date(versionDetails.releaseDate).toLocaleDateString()
-      // link
-      var link = dom.el('a')
-      link.href = versionDetails.url.replace('-mac.zip', '.dmg')
-      link.innerText = 'cryptovista.app v' + versionDetails.version
-      dom.addClass(link, 'link link-discreet')
-      dom.add(content, date)
-      dom.add(content, link)
-      dom.add(container, content)
-    }
-
-
-    var oReq = new XMLHttpRequest()
-    oReq.overrideMimeType('application/json')
-    oReq.addEventListener('load', function () {
-      if (oReq.status === 200) {
-        addLastVersion(oReq)
-      }
-      else {
-        // handle error
-      }
-    })
-    oReq.open('GET', macVersionURL)
-    oReq.send()
-  </script>
+  <script async src="/download/download.script.js"></script>
 </body>
 
 </html>

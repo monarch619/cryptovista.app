@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.align-bottom {
+  vertical-align: bottom;
+}
+
 // MARGINS
 .no-margin {
   margin: 0;
@@ -34,6 +38,10 @@
 
 .space-right-2 {
   margin-right: 32px;
+}
+
+.space-bottom-1 {
+  margin-bottom: 16px;
 }
 
 .space-bottom-2 {
@@ -68,6 +76,7 @@
   margin-right: 16px;
 }
 
+.col-m-2,
 .col-m-3 {
   padding-left: 8px;
   padding-left: 8px;
@@ -76,6 +85,11 @@
 @media screen and (min-width: 32em) {
   .col-m-3 {
     width: 33.333%;
+    float: left;
+  }
+
+  .col-m-2 {
+    width: 50%;
     float: left;
   }
 }
