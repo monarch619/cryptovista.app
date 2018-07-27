@@ -60,6 +60,11 @@ let plugins = [
   }),
 
   new HtmlWebpackPlugin({
+    filename: 'terms-and-conditions/index.html',
+    template: path.join(SRC_FOLDER, 'terms-and-conditions', 'index.html'),
+  }),
+
+  new HtmlWebpackPlugin({
     filename: 'index.html',
     template: path.join(SRC_FOLDER, 'index.html'),
   }),
