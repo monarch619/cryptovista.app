@@ -10,34 +10,39 @@ const port = process.env.PORT || 3002
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CleanCSSPlugin = require("less-plugin-clean-css")
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development'
 
 const extractLess = new ExtractTextPlugin({
-  filename: 'cryptovista.[chunkhash].css',
+  filename: 'css/cryptovista.[chunkhash].css',
   disable: IS_DEVELOPMENT
 })
 
-let entry = []
+const pathsToClean = [
+  'dist',
+]
+
+let entry = {
+  download: path.join(SRC_FOLDER, 'download', 'download.script.js'),
+}
 
 if (IS_DEVELOPMENT) {
-  entry = entry.concat([
+  entry.app = [
     `webpack-dev-server/client?http://localhost:${port}`,
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
     path.join(SRC_FOLDER, 'index.js')
-  ])
+  ]
 }
 
 if (IS_PRODUCTION) {
-  entry = entry.concat([
-    path.join(SRC_FOLDER, 'index.js')
-  ])
+  entry.app = path.join(SRC_FOLDER, 'index.js')
 }
 
 const output = {
   path: path.join(__dirname, 'dist'),
-  filename: IS_PRODUCTION ? 'cryptovista.[chunkhash].js' : 'cryptovista.js',
+  filename: IS_PRODUCTION ? 'scripts/[name].[chunkhash].js' : 'scripts/[name].js',
   publicPath: IS_PRODUCTION ? '/' : `http://localhost:${port}`,
 }
 
@@ -47,7 +52,8 @@ if (IS_DEVELOPMENT) {
 }
 
 let plugins = [
-  // NODE_ENV should be production so that modules do not perform certain development checks
+  new CleanWebpackPlugin(pathsToClean),
+
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('development')
   }),
@@ -57,20 +63,23 @@ let plugins = [
   new HtmlWebpackPlugin({
     filename: 'download/index.html',
     template: path.join(SRC_FOLDER, 'download', 'index.html'),
+    chunks: ['manifest', 'app', 'download'],
   }),
 
   new HtmlWebpackPlugin({
     filename: 'terms-and-conditions/index.html',
     template: path.join(SRC_FOLDER, 'terms-and-conditions', 'index.html'),
+    chunks: ['manifest', 'app'],
   }),
 
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: path.join(SRC_FOLDER, 'index.html'),
+    chunks: ['manifest', 'app'],
   }),
 
   new CopyWebpackPlugin([
-    {from: SRC_FOLDER, to: DIST_FOLDER, ignore: ['**/less/**', 'index.js', 'index.html', '**/imagesRaw/**']}
+    {from: SRC_FOLDER, to: DIST_FOLDER, ignore: ['**/less/**', '*.js', 'index.html', '**/imagesRaw/**']}
   ]),
 ]
 
@@ -82,6 +91,11 @@ module.exports = {
   mode: IS_PRODUCTION ? 'production' : 'development',
   devtool: 'source-map',
   entry,
+  optimization: {
+    runtimeChunk: {
+      name: "manifest",
+    },
+  },
   module: {
     rules: [
       {
@@ -125,5 +139,4 @@ module.exports = {
   },
 
   plugins,
- 
 }
