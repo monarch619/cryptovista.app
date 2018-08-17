@@ -7,7 +7,6 @@ const express = require('express')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const childProcess = require('child_process')
 const config = require('./webpack.config')
 
 const argv = require('minimist')(process.argv.slice(2))

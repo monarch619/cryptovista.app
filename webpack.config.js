@@ -30,7 +30,6 @@ let entry = {
 
 if (IS_DEVELOPMENT) {
   entry.app = [
-    `webpack-dev-server/client?http://localhost:${port}`,
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
     path.join(SRC_FOLDER, 'index.js')
   ]
@@ -43,12 +42,7 @@ if (IS_PRODUCTION) {
 const output = {
   path: path.join(__dirname, 'dist'),
   filename: IS_PRODUCTION ? 'scripts/[name].[chunkhash].js' : 'scripts/[name].js',
-  publicPath: IS_PRODUCTION ? '/' : `http://localhost:${port}`,
-}
-
-if (IS_DEVELOPMENT) {
-  // https://github.com/webpack/webpack/issues/1114
-  // output.libraryTarget = 'commonjs2'
+  publicPath: IS_PRODUCTION ? '/' : `http://localhost:${port}/`,
 }
 
 let plugins = [
