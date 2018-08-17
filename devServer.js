@@ -15,7 +15,7 @@ const logger = console
 
 const app = express()
 const compiler = webpack(config)
-const PORT = process.env.PORT || 3002
+const PORT = process.env.PORT || 3003
 
 const wdm = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
