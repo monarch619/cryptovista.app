@@ -84,6 +84,12 @@ let plugins = [
     chunks: ['manifest', 'app'],
   }),
 
+  new HtmlWebpackPlugin({
+    filename: 'releases/v1-8-0/index.html',
+    template: path.join(SRC_FOLDER, 'releases', 'v1-8-0', 'index.html'),
+    chunks: ['manifest', 'app'],
+  }),
+
   new CopyWebpackPlugin([
     {from: SRC_FOLDER, to: DIST_FOLDER, ignore: ['**/less/**', '*.js', 'index.html', '**/imagesRaw/**']}
   ]),
