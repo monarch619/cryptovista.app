@@ -72,28 +72,20 @@ let plugins = [
     chunks: ['manifest', 'app'],
   }),
 
-  new HtmlWebpackPlugin({
-    filename: 'releases/v1-6-0/index.html',
-    template: path.join(SRC_FOLDER, 'releases', 'v1-6-0', 'index.html'),
-    chunks: ['manifest', 'app'],
-  }),
-
-  new HtmlWebpackPlugin({
-    filename: 'releases/v1-7-0/index.html',
-    template: path.join(SRC_FOLDER, 'releases', 'v1-7-0', 'index.html'),
-    chunks: ['manifest', 'app'],
-  }),
-
-  new HtmlWebpackPlugin({
-    filename: 'releases/v1-8-0/index.html',
-    template: path.join(SRC_FOLDER, 'releases', 'v1-8-0', 'index.html'),
-    chunks: ['manifest', 'app'],
-  }),
-
   new CopyWebpackPlugin([
     {from: SRC_FOLDER, to: DIST_FOLDER, ignore: ['**/less/**', '*.js', 'index.html', '**/imagesRaw/**']}
   ]),
 ]
+
+const releasePages = ['v1-6-0', 'v1-7-0', 'v1-8-0', 'v1-9-0'].map((version) => {
+  return new HtmlWebpackPlugin({
+    filename: `releases/${version}/index.html`,
+    template: path.join(SRC_FOLDER, 'releases', version, 'index.html'),
+    chunks: ['manifest', 'app'],
+  })
+})
+
+plugins = plugins.concat(releasePages)
 
 if (IS_DEVELOPMENT) {
   plugins.push(new webpack.HotModuleReplacementPlugin())
