@@ -4,23 +4,23 @@
 <head>
   <!-- COMMON TAGS -->
   <meta charset="utf-8">
-  <title>Cryptovista.app - release v1.8.0</title>
-  <link rel="canonical" href="https://cryptovista.app/releases/v1-8-0" />
+  <title>Cryptovista.app - release v1.10.0</title>
+  <link rel="canonical" href="https://cryptovista.app/releases/v1-10-0" />
   <!-- Search Engine -->
-  <meta name="description" content="Cryptovista improvements: Coinbase Pro portfolio and trade history support; coin allocation widget gets stable coins and fiats categories.">
+  <meta name="description" content="Cryptovista improvements: experimental Bitcoin xpub support; trade history fixes">
   <meta name="image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Schema.org for Google -->
-  <meta itemprop="name" content="Cryptovista App v1.8.0 release updates and download">
-  <meta itemprop="description" content="Cryptovista improvements: Coinbase Pro portfolio and trade history support; coin allocation widget gets stable coins and fiats categories.">
+  <meta itemprop="name" content="Cryptovista App v1.10.0 release updates and download">
+  <meta itemprop="description" content="Cryptovista improvements: experimental Bitcoin xpub support; trade history fixes">
   <meta itemprop="image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cryptovista App v1.8.0 release updates and download">
-  <meta name="twitter:description" content="Cryptovista improvements: Coinbase Pro portfolio and trade history support; coin allocation widget gets stable coins and fiats categories.">
+  <meta name="twitter:title" content="Cryptovista App v1.10.0 release updates and download">
+  <meta name="twitter:description" content="Cryptovista improvements: experimental Bitcoin xpub support; trade history fixes">
   <meta name="twitter:image:src" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta name="og:title" content="Cryptovista App v1.8.0 release updates and download">
-  <meta name="og:description" content="Cryptovista improvements: Coinbase Pro portfolio and trade history support; coin allocation widget gets stable coins and fiats categories.">
+  <meta name="og:title" content="Cryptovista App v1.10.0 release updates and download">
+  <meta name="og:description" content="Cryptovista improvements: experimental Bitcoin xpub support; trade history fixes">
   <meta name="og:image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <meta name="og:type" content="website">
 
@@ -66,22 +66,26 @@
     <section>
       <div class="container space-top-2 space-bottom-2">
         <div class="panel padded-2">
-          <h1>Cryptovista v1.8.0 update</h1>
-          <p>This release is a maintainance release; meaning a lot of work has been done behind the scenes to allow further improvements. But it still brings some new stuff.</p>
-          <h3><a id="Features_7"></a>Features</h3>
-          <ul class="list-no-padding">
-            <li class="space-bottom-2">
-              <div class="space-bottom-1">
-                <strong>Coin allocation widget:</strong> in the dashboard, the coin allocation widget gets fiats and stable coins categories.
-              </div>
-              <img alt="Portfolio coin allocation widget, showing the proportion hold in Bitcoin, top 20 cap, top 75 cap, minor coins, stable coins and fiats." class="image with-shadow" width="483" height="341" src="/images/cryptovista-portfolio-coin-allocation.png"/>
-            </li>
-            <li><strong>Exchanges:</strong> Coinbase PRO support, portfolio, trade history and open orders.</li>
-            <li><strong>Trade info:</strong> UI improvements when a market is selected; easier to refresh trades for some exchanges.</li>
+          <h1>Cryptovista v1.10.0 update</h1>
+          <p>Some bug fixes and small improvement to the UX from user feedback.</p>
+          <p><b>Important</b>: a bug was found in the trade history feature.
+            You must download your entire trade history again for <em>Coinbase Pro or Binance</em> sources.
+          </p>
+
+          <h3 id="features">Features</h3>
+          <ul>
+            <li><b>Add new source</b>: improved instructions &amp; security notice visibility.</li>
+            <li><b>App errors</b>: improved error reporting with trades and bugs in general.</li>
+            <li><b>Sign in</b>: now the last profile used is selected by default when app starts.</li>
           </ul>
-          <h3><a id="Bug_Fixes_0"></a>Bug Fixes</h3>
-          <ul class="list-no-padding">
-            <li><strong>Market section:</strong> the link to coinmarket cap was broken, now fixed.</li>
+
+          <h3 id="bug-fixes">Bug Fixes</h3>
+          <ul>
+            <li><b>Markets</b>: fix coin listing and price due to Coinmarketcap API update</li>
+            <li>
+              <b>Trade history</b>: fix coinbase Pro/Binance duplicated trades issue
+              <p>An issue could cause trades to appear duplicated. This would lead to wrong statistics related to the trade history. You should download your entire trade history for <em>Coinbase Pro or Binance</em> sources.</p>
+            </li>
           </ul>
         </div>
       </div>
