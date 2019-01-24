@@ -22,22 +22,22 @@
   },
   "homepage": "https://github.com/AoDev/cryptovista.app#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "0.1.19",
-    "copy-webpack-plugin": "4.5.2",
+    "clean-webpack-plugin": "1.0.1",
+    "copy-webpack-plugin": "4.6.0",
     "css-loader": "1.0.0",
-    "express": "4.16.3",
+    "express": "4.16.4",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "html-webpack-plugin": "3.2.0",
-    "less": "3.7.1",
+    "less": "3.9.0",
     "less-loader": "4.1.0",
     "less-plugin-clean-css": "1.5.1",
     "ncp": "2.0.0",
-    "normalize.css": "8.0.0",
+    "normalize.css": "8.0.1",
     "style-loader": "0.21.0",
-    "webpack": "4.16.0",
-    "webpack-cli": "3.0.8",
-    "webpack-dev-middleware": "3.1.3",
-    "webpack-dev-server": "3.1.4",
-    "webpack-hot-middleware": "2.22.2"
+    "webpack": "4.29.0",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-middleware": "3.5.1",
+    "webpack-dev-server": "3.1.14",
+    "webpack-hot-middleware": "2.24.3"
   }
 }
