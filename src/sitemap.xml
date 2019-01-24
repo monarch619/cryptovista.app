@@ -9,18 +9,48 @@
 
 <url>
   <loc>https://cryptovista.app/</loc>
-  <lastmod>2018-08-01T09:06:39+00:00</lastmod>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://cryptovista.app/download/</loc>
-  <lastmod>2018-08-01T09:06:39+00:00</lastmod>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/v1-10-0/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cryptovista.app/terms-and-conditions/</loc>
-  <lastmod>2018-08-01T09:06:39+00:00</lastmod>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/v1-9-0/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/v1-8-0/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/v1-7-0/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cryptovista.app/releases/v1-6-0/</loc>
+  <lastmod>2019-01-24T13:51:50+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
