@@ -83,7 +83,7 @@ let plugins = [
   ]),
 ]
 
-const releasePages = ['v1-6-0', 'v1-7-0', 'v1-8-0', 'v1-9-0', 'v1-10-0'].map((version) => {
+const releasePages = ['v1-6-0', 'v1-7-0', 'v1-8-0', 'v1-9-0', 'v1-10-0', 'v1-12-0'].map((version) => {
   return new HtmlWebpackPlugin({
     filename: `releases/${version}/index.html`,
     template: path.join(SRC_FOLDER, 'releases', version, 'index.html'),
