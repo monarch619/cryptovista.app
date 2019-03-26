@@ -32,6 +32,10 @@
   margin-top: 0 !important;
 }
 
+.space-top-2 {
+  margin-top: 2 * 16px;
+}
+
 .space-right-1 {
   margin-right: 16px;
 }
@@ -46,6 +50,10 @@
 
 .space-right-2 {
   margin-right: 32px;
+}
+
+.space-bottom-0 {
+  margin-bottom: 0 !important;
 }
 
 .space-bottom-1 {
@@ -111,9 +119,23 @@
   }
 }
 
+// Height
+.height-100p {
+  height: 100%;
+}
+
 // FLEX
 .flex {
   display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-fill {
+  flex-grow: 1;
 }
 
 .flex-center {
@@ -140,3 +162,14 @@
 .float-right {
   float: right;
 }
+
+// GRID
+@grid-fluid-values: 16em, 28em;
+
+each(@grid-fluid-values, .(@gvalue) {
+  .grid-fluid-colmin@{gvalue} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(@gvalue, 1fr));
+    grid-gap: @spacing-base;
+  }
+})
