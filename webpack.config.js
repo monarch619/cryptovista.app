@@ -2,6 +2,7 @@
  * Base webpack config used across other specific configs
  */
 const path = require('path')
+const fs = require('fs')
 const webpack = require('webpack')
 const ROOT_FOLDER = __dirname
 const SRC_FOLDER = path.join(ROOT_FOLDER, 'src')
@@ -83,7 +84,12 @@ let plugins = [
   ]),
 ]
 
-const releasePages = ['v1-6-0', 'v1-7-0', 'v1-8-0', 'v1-9-0', 'v1-10-0', 'v1-12-0'].map((version) => {
+function listDirs (rootDir) {
+  return fs.readdirSync(rootDir).filter((file) => fs.statSync(path.join(rootDir, file)).isDirectory())
+}
+
+const releases = listDirs(path.join(ROOT_FOLDER, 'src', 'releases'))
+const releasePages = releases.map((version) => {
   return new HtmlWebpackPlugin({
     filename: `releases/${version}/index.html`,
     template: path.join(SRC_FOLDER, 'releases', version, 'index.html'),
