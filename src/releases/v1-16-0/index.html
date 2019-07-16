@@ -4,23 +4,23 @@
 <head>
   <!-- COMMON TAGS -->
   <meta charset="utf-8">
-  <title>Cryptovista.app - All releases</title>
-  <link rel="canonical" href="https://cryptovista.app/releases" />
+  <title>Cryptovista.app - release v1.15.0</title>
+  <link rel="canonical" href="https://cryptovista.app/releases/v1-16-0" />
   <!-- Search Engine -->
-  <meta name="description" content="All releases, new features and bug fixes of Cryptovista.">
+  <meta name="description" content="Added Kucoin support. Started Multilanguage support. Many improvements in UI + fixes.">
   <meta name="image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Schema.org for Google -->
-  <meta itemprop="name" content="Cryptovista.app - All releases">
-  <meta itemprop="description" content="All releases, new features and bug fixes of Cryptovista.">
+  <meta itemprop="name" content="Cryptovista App v1.16.0 release updates and download">
+  <meta itemprop="description" content="Added Kucoin support. Started Multilanguage support. Many improvements in UI + fixes.">
   <meta itemprop="image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cryptovista.app - All releases">
-  <meta name="twitter:description" content="All releases, new features and bug fixes of Cryptovista.">
+  <meta name="twitter:title" content="Cryptovista App v1.16.0 release updates and download">
+  <meta name="twitter:description" content="Added Kucoin support. Started Multilanguage support. Many improvements in UI + fixes.">
   <meta name="twitter:image:src" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta name="og:title" content="Cryptovista.app - All releases">
-  <meta name="og:description" content="All releases, new features and bug fixes of Cryptovista.">
+  <meta name="og:title" content="Cryptovista App v1.16.0 release updates and download">
+  <meta name="og:description" content="Added Kucoin support. Started Multilanguage support. Many improvements in UI + fixes.">
   <meta name="og:image" content="https://cryptovista.app/images/cryptovista-site-preview.png">
   <meta name="og:type" content="website">
 
@@ -56,55 +56,40 @@
           </div>
         </a>
         <a class="link-cta flex-row-end" href="/download">
-          <img class="download-icon" src="/images/cryptovista-download-icon.svg" width="32" height="32" aria-label="Go to download page"
-            alt="" />
+          <img class="download-icon" src="/images/cryptovista-download-icon.svg" width="32" height="32" aria-label="Go to download page" alt=""/>
           <span class="download-text">Get the app !
         </a>
       </div>
     </div>
   </header>
-
   <main>
     <section>
       <div class="container space-top-2 space-bottom-2">
         <div class="panel padded-2">
-          <h2>All Cryptovista releases</h2>
-          <p>Find new features and other improvements added over time.</p>
-          <ul class="txt-12">
-            <li><a href="/releases/v1-16-0">Release v1.16.0</a>
-              <p class="space-top-0">Added Kucoin support. Started Multilanguage support. Many improvements in UI + fixes.</p>
+          <h1>Cryptovista v1.16.0 update</h1>
+
+          <h3 id="features">Features</h3>
+          <ul class="list-space-1">
+            <li><b>Cryptopia</b>: is not supported anymore, you can still see the old balance. (Exchange bankruptcy)</li>
+            <li><b>New exchange</b>: added Kucoin (balance, tickers, orders)</li>
+            <li><b>Tickers</b>: improved fiat conversion; using exchange tickers better.</li>
+            <li><b>Trade Timeline</b>: added possibility to aggregate consecutive buy/sell. So you understand better where you
+              stand if you average down / up.</li>
+            <li><b>UI translation</b>: starting to support multi language, added some Spanish translations. (low priority, work in progress)
             </li>
-            <li><a href="/releases/v1-15-0">Release v1.15.0</a>
-              <p class="space-top-0">Trade history wizard improved; multiple app fixes.</p>
+            <li><b>UI changes</b>:
+              <ul>
+                <li>"Markets" and "news" are now available without signing in.</li>
+                <li>All options / sections are now accessible in the main side menu.</li>
+                <li>"Signout link" was moved to side menu as submenu of profile.</li>
+              </ul>
             </li>
-            <li><a href="/releases/v1-14-0">Release v1.14.0</a>
-              <p class="space-top-0">Market price come from coinpaprika.com instead of coinmarketcap.</p>
-            </li>
-            <li><a href="/releases/v1-13-0">Release v1.13.0</a>
-              <p class="space-top-0">
-                Official release of online / mobile version! & improvements to better follow your day trading and portfolio history.
-              </p>
-            </li>
-            <li><a href="/releases/v1-12-0">Release v1.12.0</a>
-              <p class="space-top-0">New "trade hints feature" in dashboard. Better UI for small screens.</p>
-            </li>
-            <li>Release v1.11.0
-              <p class="space-top-0">Was skipped to release more things in the next release.</p>
-            </li>
-            <li><a href="/releases/v1-10-0">Release v1.10.0</a>
-              <p class="space-top-0">Experimental Bitcoin xpub support; trade history fixes.</p>
-            </li>
-            <li><a href="/releases/v1-9-0">Release v1.9.0</a>
-              <p class="space-top-0">Small bug fixes, better error reporting.</p>
-            </li>
-            <li><a href="/releases/v1-8-0">Release v1.8.0</a>
-              <p class="space-top-0">Coinbase Pro portfolio and trade history support; coin allocation widget gets stable coins and fiats categories.</p>
-            </li>
-            <li><a href="/releases/v1-7-0">Release v1.7.0</a>
-              <p class="space-top-0">Faster trade fetching and market selector & open orders support for Cryptopia.</p>
-            </li>
-            <li><a href="/releases/v1-6-0">Release v1.6.0</a>
-              <p class="space-top-0">Trade timeline by market, trade balance in multiple quotes and more improvements.</li></p>
+          </ul>
+
+          <h3 id="bug-fixes">Bug Fixes</h3>
+          <ul>
+            <li><b>Profile</b>: the app could delete the wrong profile sometimes!</li>
+            <li><b>Trade Timeline</b>: use the cost for bubble size (was using amount)</li>
           </ul>
         </div>
       </div>
